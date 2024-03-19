@@ -62,12 +62,12 @@ annotate service.Incidents with @(
         Data : [
             {
                 $Type : 'UI.DataField',
-                Value : customer_ID,
-                Label : 'Customer',
+                Value : title,
             },
             {
                 $Type : 'UI.DataField',
-                Value : title,
+                Value : customer_ID,
+                Label : 'Customer',
             },
         ],
     },

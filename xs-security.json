@@ -6,8 +6,13 @@
     {
       "name": "uaa.user",
       "description": "UAA"
+    },
+    {
+      "name": "$XSAPPNAME.support",
+      "description": "support"
     }
   ],
+  "attributes": [],
   "role-templates": [
     {
       "name": "Token_Exchange",
@@ -15,6 +20,14 @@
       "scope-references": [
         "uaa.user"
       ]
+    },
+    {
+      "name": "support",
+      "description": "generated",
+      "scope-references": [
+        "$XSAPPNAME.support"
+      ],
+      "attribute-references": []
     }
   ]
 }

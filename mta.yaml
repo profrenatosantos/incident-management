@@ -9,6 +9,7 @@ modules:
     requires:
       - name: incident-management-db
       - name: uaa_incident-management
+      - name: incident-management-logging
     provides:
       - name: srv-api
         properties:
@@ -128,6 +129,11 @@ resources:
       config:
         xsappname: incident-management-${org}-${space}
         tenant-mode: dedicated
+  - name: incident-management-logging
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: application-logs
+      service-plan: lite
 parameters:
   deploy_mode: html5-repo
   enable-parallel-deployments: true

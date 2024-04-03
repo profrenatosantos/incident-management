@@ -10,6 +10,9 @@ modules:
       - name: incident-management-db
       - name: uaa_incident-management
       - name: incident-management-logging
+      - name: ysyard-autoscaler-standard
+        parameters:
+          path: ./autoscaler.json      
     provides:
       - name: srv-api
         properties:
@@ -134,6 +137,15 @@ resources:
     parameters:
       service: application-logs
       service-plan: lite
+
+# ------------------------------------------------------------
+  - name: ysyard-autoscaler-standard
+# ------------------------------------------------------------
+    type: org.cloudfoundry.existing-service
+    parameters:
+      service: autoscaler
+      service-plan: standard
+
 parameters:
   deploy_mode: html5-repo
   enable-parallel-deployments: true
